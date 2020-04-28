@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Riq'a 1</title>
+		<style media = "all">
+			body {
+				background: #333;
+				color: #fff;
+			}
+
+			#canvas {
+				margin: 0 0 0 0;
+				position: absolute;
+				height: 1269px;
+				width: 917px;
+			}
+		</style>
+        <script src="js/raphael.js"></script>
+    </head>
+    <body>
+        <div id="canvas"></div>
+		<script type="text/javascript">
+			let canvasWidth = 917;
+			let canvasHeight = 1269;
+			let gridSize = 20;
+			let gridColor = '#0000FF';
+			var paper = new Raphael(document.getElementById('canvas'), canvasWidth, canvasHeight);
+			var sample = paper.image("img/riqaa/riqaa1.png", 0, 0, canvasWidth, canvasHeight);
+			var i = gridSize;
+			while (i < canvasHeight) {
+				line = paper.path( ["M", 0, i, "L", canvasWidth, i] ).attr('stroke', gridColor);
+				i += gridSize;
+			};
+			i = gridSize;
+			while (i < canvasWidth) {
+				line = paper.path( ["M", i, 0, "L", i, canvasHeight] ).attr('stroke', gridColor);
+				i += gridSize;
+			};
+		</script> 
+    </body>
+</html>
