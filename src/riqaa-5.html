@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Riq'a 5</title>
+		<style media = "all">
+			body {
+				background: #333;
+				color: #fff;
+			}
+
+			#canvas {
+				margin: 0 0 0 0;
+				position: absolute;
+				height: 1270px;
+				width: 917px;
+			}
+		</style>
+        <script src="js/raphael.js"></script>
+    </head>
+    <body>
+        <div id="canvas"></div>
+		<script type="text/javascript">
+			let canvasWidth = 935;
+			let canvasHeight = 1270;
+			let gridSize = 20;
+			let gridColor = '#0000FF';
+			let baselineColor = '#FF0000';
+			
+			let redlines = [3, 7, 14, 18, 24, 28, 35, 39, 46, 50, 57, 61];
+			
+			var paper = new Raphael(document.getElementById('canvas'), canvasWidth, canvasHeight);
+			var sample = paper.image("img/riqaa/riqaa5.png", 0, 0, canvasWidth, canvasHeight);
+			
+			var i = gridSize;
+			var line_nr = 0;
+			while (i < canvasHeight) {
+				line_nr++;
+				line = paper.path( ["M", 0, i, "L", canvasWidth, i] );
+				if (redlines.includes(line_nr)) {
+				    line.attr('stroke', baselineColor);
+				} else {
+				    line.attr('stroke', gridColor);
+				}
+				i += gridSize;
+			};
+			i = gridSize;
+			while (i < canvasWidth) {
+				line = paper.path( ["M", i, 0, "L", i, canvasHeight] ).attr('stroke', gridColor);
+				i += gridSize;
+			};
+		</script> 
+    </body>
+</html>
