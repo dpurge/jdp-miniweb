@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Złotlinek - parter</title>
+		<style media = "all">
+			body {
+				background: #333;
+				color: #fff;
+			}
+
+			#canvas {
+				margin: 0 0 0 0;
+				position: absolute;
+				height: 3175px;
+				width: 1600px;
+			}
+		</style>
+        <script src="js/raphael.js"></script>
+    </head>
+    <body>
+        <div id="canvas"></div>
+		<script type="text/javascript">
+			let canvasWidth = 1600;
+			let canvasHeight = 3175;
+			let gridSize = 60;
+			let gridColor = '#0000FF';
+			let nrColor = '#FF0000';
+			
+			var paper = new Raphael(document.getElementById('canvas'), canvasWidth, canvasHeight);
+			var sample = paper.image("img/zlotlinek/parter.jpg", 0, 0, canvasWidth, canvasHeight);
+			
+			var i = gridSize;
+			var line_nr = 0;
+			while (i < canvasHeight) {
+				line_nr++;
+				line = paper.path( ["M", 0, i, "L", canvasWidth, i] ).attr('stroke', gridColor);
+				i += gridSize;
+				paper.text(gridSize / 2, i - gridSize / 2, line_nr).attr('fill',nrColor);
+			};
+			
+			i = gridSize;
+			line_nr = 0;
+			while (i < canvasWidth) {
+				line = paper.path( ["M", i, 0, "L", i, canvasHeight] ).attr('stroke', gridColor);
+				paper.text(i - gridSize / 2, gridSize / 2, line_nr).attr('fill',nrColor);
+				i += gridSize;
+				line_nr++;
+			};
+		</script> 
+    </body>
+</html>
