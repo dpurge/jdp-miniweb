@@ -1,0 +1,37 @@
+#phrase {
+    direction: rtl;
+    unicode-bidi: embed;
+    font-size: 1.6rem;
+    font-family: "Amiri", sans-serif;
+}
+
+.phrase {
+    direction: rtl;
+    unicode-bidi: embed;
+    font-size: 1.3rem;
+    font-family: "Amiri", sans-serif;
+}
+
+#transcription {
+    font-size: 1.3rem;
+}
+
+.transcription {
+    font-size: 1.2rem;
+}
+
+#translation {
+    font-size: 1.3rem;
+}
+
+.translation {
+    font-size: 1.2rem;
+}
+
+#notes {
+    font-size: 1.3rem;
+}
+
+.notes {
+    font-size: 1.2rem;
+}

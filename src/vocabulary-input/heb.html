@@ -8,13 +8,15 @@
     <link rel="icon" href="favicon.ico">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/form.css">
-    <link rel="stylesheet" href="css/latn.css">
+    <link rel="stylesheet" href="css/hebr.css">
+    <script src="js/ime/heb/phrase.js"></script>
+    <!-- script src="js/ime/heb/transcription.js"></script -->
     <script src="js/main.js"></script>
 </head>
 
 <body>
 
-<h1>Add Latin phrase</h1>
+<h1>Add Hebrew phrase</h1>
 
 <div class="container">
   <form>
@@ -68,13 +70,13 @@
     </div>
 	
     <div class="row">
-		<button id="add" class="btn round"><i class="fa fa-save"></i></button>		
+		<button id="add" class="btn round"><i class="fa fa-save"></i></button>
 		<button id="undo" class="btn round"><i class="fa fa-undo"></i></button>
     </div>
   </form>
 </div>
 
-<h2>Vocabulary</h2>
+<h2>Hebrew Vocabulary</h2>
 
 <div class="container">
 	<form>
@@ -87,7 +89,7 @@
 </div>
 
 <script>
-window.downloadFileName = 'vocabulary-latin.csv';
+window.downloadFileName = 'vocabulary-hebrew.csv';
 window.onload = function () {
     onLoad();
 };

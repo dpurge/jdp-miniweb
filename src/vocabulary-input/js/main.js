@@ -79,24 +79,28 @@ function renderVocabulary()
 			
 		_phrase = _item.appendChild(
 			document.createElement('span'));
+		_phrase.setAttribute('class', 'phrase');
 		_phrase.innerHTML = i.phrase;
 		
 		_item.innerHTML += " ";
 		
 		_transcription = _item.appendChild(
 			document.createElement('span'));
+		_transcription.setAttribute('class', 'transcription');
 		_transcription.innerHTML = i.transcription;
 		
 		_item.innerHTML += " ";
 		
 		_translation = _item.appendChild(
 			document.createElement('span'));
+		_translation.setAttribute('class', 'translation');
 		_translation.innerHTML = i.translation;
 		
 		_item.innerHTML += " ";
 		
 		_notes = _item.appendChild(
 			document.createElement('span'));
+		_notes.setAttribute('class', 'notes');
 		_notes.innerHTML = i.notes;
 	}
 }
@@ -192,7 +196,7 @@ function onLoad()
 	undo.onclick = onUndo;
 	resset.onclick = onReset;
 	
-	if (phraseIme != null) {
+	if (typeof phraseIme !== 'undefined') {
 		phrase.ime = phraseIme;
 		phrase.state = {shift:false, alt:false, ctrl:false};
 		phrase.onkeydown = onKeyDown;
@@ -200,7 +204,7 @@ function onLoad()
 		phrase.onkeyup = onKeyUp;
 	}
 	
-	if (transcriptionIme != null) {
+	if (typeof transcriptionIme !== 'undefined') {
 		transcription.ime = transcriptionIme;
 		transcription.state = {shift:false, alt:false, ctrl:false};
 		transcription.onkeydown = onKeyDown;
