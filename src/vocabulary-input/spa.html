@@ -35,6 +35,19 @@
 
     <div hidden class="row">
       <div class="col-label">
+        <label for="grammar">Grammar</label>
+      </div>
+      <div class="col-input">
+        <select id="grammar" name="Grammar">
+          <option value="">--</option>
+          <!-- option value="example-01">Example 1</option>
+          <option value="example-02">Example 2</option -->
+        </select>
+      </div>
+    </div>
+
+    <div hidden class="row">
+      <div class="col-label">
         <label for="transcription">Transcription</label>
       </div>
       <div class="col-input">
@@ -81,6 +94,7 @@
 	<form>
     <div class="row">
 		<button id="download" class="btn round"><i class="fa fa-download"></i></button>
+		<button id="coppy" class="btn round"><i class="fa fa-copy"></i></button>
 		<button id="resset" class="btn round"><i class="fa fa-times"></i></button>
     </div>
 	</form>

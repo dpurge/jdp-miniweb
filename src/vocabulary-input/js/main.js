@@ -65,6 +65,7 @@ function onKeyPress(event) {
 function clearForm()
 {
 	phrase.value = "";
+	grammar.value = "";
 	transcription.value = "";
 	translation.value = "";
 	notes.value = "";
@@ -81,6 +82,13 @@ function renderVocabulary()
 			document.createElement('span'));
 		_phrase.setAttribute('class', 'phrase');
 		_phrase.innerHTML = i.phrase;
+		
+		_item.innerHTML += " ";
+			
+		_grammar = _item.appendChild(
+			document.createElement('span'));
+		_grammar.setAttribute('class', 'grammar');
+		_grammar.innerHTML = i.grammar;
 		
 		_item.innerHTML += " ";
 		
@@ -105,11 +113,31 @@ function renderVocabulary()
 	}
 }
 
+function getData() {
+
+	var buffer = "Phrase\tGrammar\tTranscription\tTranslation\tNotes\n";
+	for (let i of data) {
+		buffer += i.phrase;
+		buffer += "\t";
+		buffer += i.grammar;
+		buffer += "\t";
+		buffer += i.transcription;
+		buffer += "\t";
+		buffer += i.translation;
+		buffer += "\t";
+		buffer += i.notes;
+		buffer += "\n";
+	}
+
+	return buffer;
+}
+
 function onAdd(event)
 {
 	event.preventDefault();
 	var item = {
 		phrase: phrase.value,
+		grammar: grammar.value,
 		transcription: transcription.value,
 		translation: translation.value,
 		notes: notes.value
@@ -125,19 +153,8 @@ function onAdd(event)
 function onDownload(event)
 {
 	event.preventDefault();
-	console.log(data);
-	
-	var buffer = "Phrase\tTranscription\tTranslation\tNotes\n";
-	for (let i of data) {
-		buffer += i.phrase;
-		buffer += "\t";
-		buffer += i.transcription;
-		buffer += "\t";
-		buffer += i.translation;
-		buffer += "\t";
-		buffer += i.notes;
-		buffer += "\n";
-	}
+
+	var buffer = getData();
 	
 	const blobData = new Blob(
 		[ buffer ], 
@@ -156,6 +173,23 @@ function onDownload(event)
 	link.click();
 	URL.revokeObjectURL(blobUrl);
 	phrase.focus();
+}
+
+async function onCopy(event)
+{
+	event.preventDefault();
+
+	var buffer = getData();
+	
+	if (!navigator.clipboard) {
+		return;
+	}
+
+	try {
+		await navigator.clipboard.writeText(buffer);
+	} catch (error) {
+		console.error("Copy to clipboard failed", error);
+	}
 }
 
 function onUndo(event)
@@ -193,6 +227,7 @@ function onLoad()
 	
 	add.onclick = onAdd;
 	download.onclick = onDownload;
+	coppy.onclick = onCopy;
 	undo.onclick = onUndo;
 	resset.onclick = onReset;
 	
