@@ -1,0 +1,31 @@
+#phrase {
+    font-size: 1.6rem;
+}
+
+.phrase {
+    font-size: 1.3rem;
+}
+
+#transcription {
+    font-size: 1.3rem;
+}
+
+.transcription {
+    font-size: 1.2rem;
+}
+
+#translation {
+    font-size: 1.3rem;
+}
+
+.translation {
+    font-size: 1.2rem;
+}
+
+#notes {
+    font-size: 1.3rem;
+}
+
+.notes {
+    font-size: 1.2rem;
+}

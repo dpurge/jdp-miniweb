@@ -208,6 +208,10 @@ function onReset(event)
 	phrase.focus();
 }
 
+function sortIme(a,b) {
+	return b[0].length - a[0].length;
+}
+
 function onLoad()
 {	
 	window.data = [];
@@ -232,6 +236,8 @@ function onLoad()
 	resset.onclick = onReset;
 	
 	if (typeof phraseIme !== 'undefined') {
+		phraseIme.sort(sortIme);
+
 		phrase.ime = phraseIme;
 		phrase.state = {shift:false, alt:false, ctrl:false};
 		phrase.onkeydown = onKeyDown;
