@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown edit</title>
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/arab.css">
+    <script src="js/ime/arb.js"></script>
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+
+<h1>Edit Arabic text</h1>
+
+<div class="container">
+  <form>
+    <div class="row">
+      <button id="download" class="btn round"><i class="fa fa-download"></i></button>
+      <button id="coppy" class="btn round"><i class="fa fa-copy"></i></button>
+      <button id="resset" class="btn round"><i class="fa fa-times"></i></button>
+    </div>
+    <br />
+    <div class="row">
+      <textarea id="tekst" name="Tekst" placeholder="Arabic text..." style="height:800px"></textarea>
+    </div>
+  </form>
+</div>
+
+<script type="module">
+window.downloadFileName = 'text-arabic.md';
+window.onload = function () {
+    onLoad();
+};
+</script>
+
+</body>
+</html>

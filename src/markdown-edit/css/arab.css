@@ -1,0 +1,7 @@
+#tekst {
+    direction: rtl;
+    unicode-bidi: embed;
+    font-size: 1.6rem;
+    font-family: "Amiri", sans-serif;
+    text-align: right;
+}
