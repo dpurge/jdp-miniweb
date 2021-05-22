@@ -38,6 +38,8 @@ function onKeyUp(event) {
 
 function onKeyPress(event) {
 	//if (this.ime == null) return;
+	if (event.key == "Enter") return;
+	
 	event.preventDefault();
 	var key = event.key;
 	
