@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocabulary entry</title>
+    <link rel="icon" href="favicon.ico">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/cyrl.css">
+    <script src="js/ime/ukr/phrase.js"></script>
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+
+<h1>Add Ukrainian phrase</h1>
+
+<div class="container">
+  <form>
+
+    <div class="row">
+      <div class="col-label">
+        <label for="phrase">Phrase</label>
+      </div>
+      <div class="col-input">
+        <input
+            type="text"
+            id="phrase"
+            name="Phrase"
+            placeholder="Phrase...">
+      </div>
+    </div>
+
+    <div hidden class="row">
+      <div class="col-label">
+        <label for="grammar">Grammar</label>
+      </div>
+      <div class="col-input">
+        <select id="grammar" name="Grammar">
+          <option value="">--</option>
+          <!-- option value="example-01">Example 1</option>
+          <option value="example-02">Example 2</option -->
+        </select>
+      </div>
+    </div>
+
+    <div hidden class="row">
+      <div class="col-label">
+        <label for="transcription">Transcription</label>
+      </div>
+      <div class="col-input">
+        <input
+            type="text"
+            id="transcription"
+            name="Transcription"
+            placeholder="Transcription...">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-label">
+        <label for="translation">Translation</label>
+      </div>
+      <div class="col-input">
+        <input
+            type="text"
+            id="translation"
+            name="Translation"
+            placeholder="Translation...">
+      </div>
+    </div>
+	
+    <div class="row">
+      <div class="col-label">
+        <label for="notes">Notes</label>
+      </div>
+      <div class="col-input">
+        <textarea id="notes" name="Notes" placeholder="Notes..." style="height:200px"></textarea>
+      </div>
+    </div>
+	
+    <div class="row">
+		<button id="add" class="btn round"><i class="fa fa-save"></i></button>
+		<button id="undo" class="btn round"><i class="fa fa-undo"></i></button>
+    </div>
+  </form>
+</div>
+
+<h2>Ukrainian Vocabulary</h2>
+
+<div class="container">
+	<form>
+    <div class="row">
+		<button id="download" class="btn round"><i class="fa fa-download"></i></button>
+		<button id="coppy" class="btn round"><i class="fa fa-copy"></i></button>
+		<button id="resset" class="btn round"><i class="fa fa-times"></i></button>
+    </div>
+	</form>
+    <div id="vocabulary"></div>
+</div>
+
+<script>
+window.downloadFileName = 'vocabulary-ukrainian.csv';
+window.onload = function () {
+    onLoad();
+};
+</script>
+
+</body>
+</html>

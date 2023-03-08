@@ -1,0 +1,36 @@
+#phrase {
+    font-size: 1.6rem;
+    font-family: serif;
+    text-align: center;
+}
+
+.phrase {
+    font-size: 1.3rem;
+    font-family: serif;
+}
+
+#transcription {
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.transcription {
+    font-size: 1.2rem;
+}
+
+#translation {
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.translation {
+    font-size: 1.2rem;
+}
+
+#notes {
+    font-size: 1.3rem;
+}
+
+.notes {
+    font-size: 1.2rem;
+}
